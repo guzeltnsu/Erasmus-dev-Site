@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="erasmus web tasarım">
+    <meta name="keywords" content="web,tasarım,dizayn,faerasmus,Program">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/apple-touch-icon.png">
+    <title>Application</title>
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url("css/all.css");
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- navigation start -->
+    <nav class="navbar navbar-expand-lg" id="mainMenu" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="Cybermacs Logo" width="100" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="program.html">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Başvuru ve Kabul
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Kabul koşulları ve belgeler</a></li>
+                            <li><a class="dropdown-item" href="#">Burslar ve ücretler</a></li>
+                            <li><a class="dropdown-item" href="#">Seçim süreci</a></li>
+                            <li><a class="dropdown-item" href="#">S.S.S</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="app.html">Başvur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">İletişim</a>
+                    </li>
+                </ul>
+                <a href="signIn.html" class="LoggedIn" style="display:none">
+                    <button type="button" class="btn btn-outline-primary me-2">Giriş</button>
+                </a>
+                <a href="signUp.html" class="LoggedIn" style="display:none">
+                    <button type="button" class="btn btn-primary">Kayıt Ol</button>
+                </a>
+                <a href="signUp.html" class="LoggedOut" style="display:none">
+                    <button type="button" class="btn btn-danger" onclick="logout()">Çıkış</button>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+    <!-- navigation end -->
+
+    <div class="basvuruForm row g-5">
+
+        <div class="col-md-7 col-lg-8">
+            <h3 class="mb-4 my-2 text-center ">Başvuru Formu</h3>
+            <hr class="my-4">
+            <form class="needs-validation" novalidate="">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="firstName" name="isim" class="form-label">İsim</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="isminizi giriniz" value=""
+                            required="">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="lastName" name="soyisim" class="form-label">Soyisim</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="soyisminizi giriniz" value=""
+                            required="">
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="username" name="email" class="form-label">Email</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control" id="username" placeholder="emailinizi giriniz"
+                                required="">
+                            <div class="invalid-feedback">
+                                Your username is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="tarih" name="dog.tarih" class="form-label">Doğum Tarihi</label>
+                        <input type="date" id="tarih" class="form-control">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="tel" class="form-label" name="telefon">Telefon No</label>
+                        <input type="tel" class="form-control" id="tel" placeholder="tel no giriniz" value=""
+                            required="">
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-12">
+                        <label for="address" class="form-label" name="adres">Adres</label>
+                        <input type="text" class="form-control" id="address" placeholder="Adres detayı giriniz"
+                            required="">
+                        <div class="invalid-feedback">
+                            Please enter your shipping address.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="address2" class="form-label" name="adres">Adres 2 <span
+                                class="text-muted">(Optional)</span></label>
+                        <input type="text" class="form-control" id="address2" placeholder="Apartman ve daire">
+                    </div>
+
+                    <div class="col-md-5 mb-3">
+                        <label for="country" class="form-label" name="ülke">Ülke</label>
+                        <select class="form-select" id="country" onchange="countryChange()" required="">
+
+                        </select>
+                        <select class="form-select" id="country2" required="">
+                            <option value="">seçiniz...</option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option multiselect__option--highlight"><span>TÜRKİYE</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BİRLEŞİK ARAP
+                                        EMİRLİKLERİ</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>AFGANİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ANTİGUA VE
+                                        BARBUDA</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ARNAVUTLUK</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ERMENİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ANGOLA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ARJANTİN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>AMERİKAN SAMOA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>AVUSTURYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>AVUSTRALYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>AZERBAYCAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BOSNA - HERSEK</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BARBADOS</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BANGLADEŞ</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BELÇİKA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BURKİNA FASO</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BULGARİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BAHREYN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BURUNDİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BENİN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BRUNEİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BOLİVYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BREZİLYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BAHAMALAR</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BUTAN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BOTSVANA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BEYAZ RUSYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>BELİZE</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KANADA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ORTA AFRİKA
+                                        CUMHURİYETLER</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İSVİÇRE</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>FİLDİSİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ŞİLİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KAMERUN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ÇİN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KOLOMBİA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KOSTA RİKA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KÜBA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>CABO VERDE
+                                        CUMHURİYETİ</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>CHRISTMAS
+                                        ADALARI</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ÇEK CUM.</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ALMANYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>CUBİTİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>DANİMARKA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>DOMİNİK
+                                        CUMHURİYETİ</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>CEZAYİR</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>EKVATOR</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ESTONYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MISIR</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ERİTRE</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İSPANYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ETİOPYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>FİNLANDİYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>FİJİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MİKRONEZYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>FRANSA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GABON</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İNGİLTERE / BİRLEŞİK
+                                        KRALLIK</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GRENADA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GÜRCİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GANA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GAMBİA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GİNE</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>EKVATOR GİNESİ</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>YUNANİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GUATEMALA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GİNE BİSSAU</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GUYANA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>HONG KONG</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>HONDURAS</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>HIRVATİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>HAİTİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MACARİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ENDONEZYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İRLANDA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İSRAİL</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>HİNDİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>IRAK</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İRAN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İZLANDA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İTALYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>JAMAİKA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ÜRDÜN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>JAPONYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KENYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KIRGIZİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KİRİBATİ
+                                        CUMHURİYETİ</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KOMOROLAR</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ST.KITTS AND
+                                        NEVIS</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KUZEY KORE</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KONGO</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>DOMİNİKA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KARADAĞ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GÜNEY KIBRIS RUM
+                                        KESIMI</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GÜNEY KORE</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KUZEY KIBRIS TÜRK
+                                        CUMHURİYETİ</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KUVEYT</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KAZAKİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LAOS</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LÜBNAN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ST.LUCİA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LİHTENŞTAYN
+                                        PRENSLİĞİ</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SRİ LANKA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LİBERYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LESOTHO</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LİTVANYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LÜKSEMBURG</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LETONYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>LİBYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>FAS</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MOLDOVA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MADAGASKAR</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MARSHALL
+                                        ADALARI</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MAKEDONYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MALİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MOGOLİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MAKAO</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MORİTANYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MALTA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MAURITIUS</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MALDİV</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MALAVİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MEKSİKA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MALEZYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MOZAMBİK</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>NAMİBİA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>NİJER</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>NİJERYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>NİKARAGUA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>HOLLANDA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>NORVEÇ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>NEPAL</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>NAURU</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>YENİ ZELANDA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>UMMAN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>PANAMA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>PERU</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>PAPUA YENİ GİNE</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>FİLİPİNLER</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>PAKİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>POLONYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>FİLİSTİN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>PORTEKİZ</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>PALAU</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>PARAGUAY</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KATAR</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ROMANYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>RUSYA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>RUANDA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SUUDİ ARABİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SOLOMON ADA . </span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SUDAN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>İSVEÇ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SİNGAPUR</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SLOVENYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SİERRA LEONE</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SAN MARİNO
+                                        CUMHURİYETİ</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SENEGAL</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SOMALİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SURİNAM</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GÜNEY SUDAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SAO TOME VE
+                                        PRINCES</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>EL SALVADOR</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SURİYE</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>CAD.</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TOGO</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TAYLAND</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TACİKİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TÜRKMENİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TUNUS</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TONGA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>DOĞU TİMOR DEMOKRATİK
+                                        CUMHURİYETİ</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TRİNİDAD VE
+                                        TOBAGO</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TUVALU</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TAYVAN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>TANZANYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>UKRAYNA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>UGANDA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>A . B . D </span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>URUGUAY</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ÖZBEKİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>VATİKAN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ST . VİNCENT</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>VENEZUELA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>VİETNAM</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MYANMAR/BURMA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SLOVAKYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ESVATİNİ
+                                        (VAZİLAND)</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>VANUATU Ni</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>YEMEN</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>GÜNEY AFRİKA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ZAMBİA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ZİMBABVE</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KOSOVA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SIRBİSTAN</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>DEMOKRATİK KONGO
+                                        CUMHURİYETİ</span></span> <!----></option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>KAMBOÇYA</span></span>
+                                <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>MONAKO</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>SAMOA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ANDORRA</span></span> <!---->
+                            </option>
+                            <option class="multiselect__element"><span data-select="" data-selected="" data-deselect=""
+                                    class="multiselect__option"><span>ŞEYSELLER</span></span>
+                                <!---->
+                            </option>
+                            <option style="display: none;"><span class="multiselect__option"><span>Kayıt
+                                        Bulunamamıştır</span></span></option>
+                            <option style="display: none;"><span class="multiselect__option"><span>Seçenek
+                                        bulunamamıştır.</span></span></option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid country.
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="il" class="form-label">İl</label>
+                        <input type="text" class="form-control" id="il" placeholder="" required="">
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="ilce" class="form-label">İlçe</label>
+                        <input type="text" class="form-control" id="ilce" placeholder="" required="">
+                        <div class="invalid-feedback">
+                            il girilecek
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="tc" class="form-label">Tc No</label>
+                        <input type="text" class="form-control" id="tc" placeholder="tc no giriniz" value=""
+                            required="">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="tc" class="form-label">Pasaport No</label>
+                        <input type="text" class="form-control" id="tc" placeholder="pasaport no giriniz" value=""
+                            required="">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label for="zip" class="form-label">Posta Kodu</label>
+                        <input type="text" class="form-control" id="zip" placeholder="posta kodu girin" value=""
+                            required>
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-check">
+                        <p>Cinsiyet</p>
+                        <div class="col-sm-3 form-check">
+                            <input id="kadın" name="gender" type="radio" class="form-check-input" required="" value="K">
+                            <label class="form-check-label" for="kadın">Kadın</label>
+                        </div>
+
+                        <div class="col-sm-3 form-check">
+                            <input id="erkek" name="gender" type="radio" class="form-check-input" required="" value="E">
+                            <label class="form-check-label" for="erkek">Erkek</label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label for="engel" name="engel" class="form-label">Engel Durumunuz</label>
+                        <input type="text" class="form-control" id="engel" placeholder="giriniz" value="">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-check">
+                        <p>Engel Durumu</p>
+                        <div class="col-sm-3 form-check">
+                            <input id="evet" name="sec" type="radio" class="form-check-input" required="" value="yes">
+                            <label class="form-check-label" for="evet">Evet</label>
+                        </div>
+
+                        <div class="col-sm-3 form-check">
+                            <input id="hayir" name="sec" type="radio" class="form-check-input" required="" value="no">
+                            <label class="form-check-label" for="hayir">Hayır</label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label for="education" name="universite" class="form-label">Üniversite</label>
+                        <input type="text" class="form-control" id="education" placeholder="üniversitenizi giriniz"
+                            value="" required="">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="fakulte" name="fakulte" class="form-label">Fakülte</label>
+                        <input type="text" class="form-control" id="fakulte" placeholder="fakültenizi giriniz" value=""
+                            required="">
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label for="bolum" name="bolum" class="form-label">Bölüm</label>
+                        <input type="text" class="form-control" id="bolum" placeholder="bölümünüzü giriniz" value=""
+                            required="">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="mezun" name="mezun" class="form-label">Mezuniyet Durumu</label>
+                        <input type="text" class="form-control" id="mezun" placeholder="mezun durumunuzu giriniz"
+                            value="" required="">
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label for="bolum" name="bolum" class="form-label">Mezuniyet Tarihi</label>
+                        <input type="text" class="form-control" id="bolum" placeholder="bölümünüzü giriniz" value=""
+                            required="">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="mezun" name="mezun" class="form-label">Mezuniyet Ortalaması</label>
+                        <input type="text" class="form-control" id="mezun" placeholder="mezun durumunuzu giriniz"
+                            value="" required="">
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr class="my-4">
+
+                <div class="row gy-3">
+                    <div class="col-md-6">
+                        <label for="formFile" class="form-label">Lisans diploması</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="formFile" class="form-label">Transkript</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="formFile" class="form-label">Yabancı Dil Sınavı</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="formFile" class="form-label">Motivasyon Mektubu</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="formFileMultiple" class="form-label">Yayınlanmış Çalışma/Makale</label>
+                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="formFile" class="form-label">Özgeçmiş</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="formFile" class="form-label">İkamet Belgesi</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="formFile" class="form-label">Pasaport Taraması</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+
+                </div>
+
+                <hr class="my-4">
+                <div class="d-flex justify-content-center">
+                    <input type="submit" id="sendForm" class="btn btn-primary mx-3">
+                    <input type="reset" class="btn btn-outline-secondary mx-3">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- footer start -->
+    <div class="container">
+        <footer class="py-5 my-4" id="footerId">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3" style="font-style: normal;">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Ana Sayfa</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link px-2 text-muted">Hakkımızda</a></li>
+                <li class="nav-item"><a href="program.html" class="nav-link px-2 text-muted">Program</a></li>
+                <li class="nav-item"><a href="app.html" class="nav-link px-2 text-muted">Başvur</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">İletişim</a></li>
+            </ul>
+            <div class="ml-2 text-center">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <br>
+            <p class="text-center text-muted">© 2022 Company, Inc</p>
+        </footer>
+    </div>
+
+
+
+
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/custom/extra.js"></script>
+    <script>
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '8935f8e637msh5a483b3f97924c2p1f5791jsn3434f0b94c27',
+                'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+            }
+        };
+
+        fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/countries', options)
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                for (var country in list) {
+                    if (list.hasOwnProperty(country)) {
+                        document.getElementById("country").innerHTML += "<option value=" + country + ">" + list[country] + "</option>";
+                    }
+                }
+            })
+            .catch(err => console.error(err));
+    </script>

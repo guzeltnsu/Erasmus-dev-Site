@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="erasmus web tasarım">
+    <meta name="keywords" content="web,tasarım,dizayn,faerasmus,Program">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/apple-touch-icon.png">
+    <title>Ana sayfa</title>
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url("css/all.css");
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- navigation start -->
+    <nav class="navbar navbar-expand-lg" id="mainMenu" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="Cybermacs Logo" width="100" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Başvuru ve Kabul
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Kabul koşulları ve belgeler</a></li>
+                            <li><a class="dropdown-item" href="#">Burslar ve ücretler</a></li>
+                            <li><a class="dropdown-item" href="#">Seçim süreci</a></li>
+                            <li><a class="dropdown-item" href="#">S.S.S</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="app.html">Başvur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">İletişim</a>
+                    </li>
+                </ul>
+                <a href="signIn.html" class="LoggedIn" style="display:none">
+                    <button type="button" class="btn btn-outline-primary me-2" style="display:none">Giriş</button>
+                </a>
+                <a href="signUp.html" class="LoggedIn" style="display:none">
+                    <button type="button" class="btn btn-primary">Kayıt Ol</button>
+                </a>
+                <a href="signUp.html" class="LoggedOut" style="display:none">
+                    <button type="button" class="btn btn-danger" onclick="logout()">Çıkış</button>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- navigation end -->
+
+    <div class="container-fluid">
+
+
+    </div>
+
+
+
+
+    <!-- footer start -->
+    <div class="container">
+        <footer class="py-5 my-4" id="footerId">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3" style="font-style: normal;">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Ana Sayfa</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link px-2 text-muted">Hakkımızda</a></li>
+                <li class="nav-item"><a href="program.html" class="nav-link px-2 text-muted">Program</a></li>
+                <li class="nav-item"><a href="app.html" class="nav-link px-2 text-muted">Başvur</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">İletişim</a></li>
+            </ul>
+            <div class="ml-2 text-center">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <br>
+            <p class="text-center text-muted">© 2022 Company, Inc</p>
+        </footer>
+    </div>
+
+
+
+
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/custom/extra.js"></script>
+</body>
+
+</html>
